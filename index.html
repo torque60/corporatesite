@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sankemi - トップページ</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header class="c-header">
+        <div class="c-header__inner">
+            <a href="index.html" class="c-header__logo-wrapper">
+                <img src="" alt="" class="c-header__logo-img">
+                <span class="c-header__logo-text">Sankemi</span>
+            </a>
+            <nav class="c-nav" id="js-nav">
+                <ul class="c-nav__list">
+                    <li class="c-nav__item"><a href="index.html" class="is-active">トップ</a></li>
+                    <li class="c-nav__item"><a href="products/index.html">販売品目</a></li>
+                    <li class="c-nav__item"><a href="about/index.html">会社概要</a></li>
+                    <li class="c-nav__item"><a href="locations/index.html">拠点情報</a></li>
+                    <li class="c-nav__item"><a href="news/index.html">お知らせ</a></li>
+                    <li class="c-nav__item"><a href="contact/index.html">お問い合わせ</a></li>
+                </ul>
+            </nav>
+            <button class="c-hamburger" id="js-hamburger" aria-label="メニュー開閉">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section class="c-hero">
+            <div class="c-hero__overlay"></div>
+            <div class="l-container c-hero__inner">
+                <div class="c-hero__text-wrapper">
+                    <h1 class="c-hero__title">伝えたいことを書いてください</h1>
+                    <p class="c-hero__subtitle">短いサブキャッチや補足文をここに入れます</p>
+                </div>
+            </div>
+            <a href="products/index.html" class="c-btn c-btn--primary c-hero__cta">詳しく見る</a>
+        </section>
+
+        <section class="l-section l-container">
+            <div class="p-top__news">
+                <div class="p-top__news-header">
+                    <h2 class="c-section-title p-top__news-title">ニュース</h2>
+                </div>
+                <div class="c-news-teaser" id="js-news-trigger" title="クリックしてニュースを詳しく見る">
+                    <div class="c-news-teaser__content">
+                        <iframe src="newstest.html" scrolling="no"></iframe>
+                    </div>
+                    <div class="c-news-teaser__footer">
+                        <span>詳細を展開 ➔</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="l-section l-container">
+            <div class="p-top__case">
+                <h2 class="c-section-title">加工事例</h2>
+                <div class="c-case-grid">
+                    <article class="c-case-card">
+                        <div class="c-case-card__image">
+                            <!-- 画像プレースホルダ -->
+                        </div>
+                        <div class="c-case-card__body">
+                            <div class="c-case-card__label">マスターバッチ使用例</div>
+                            <h3 class="c-case-card__title">商品名A</h3>
+                            <p class="c-case-card__desc">商品Aの簡単な説明が入ります。用途や特徴を短くまとめてください。</p>
+                            <div class="c-case-card__actions">
+                                <a class="c-case-card__link" href="#">詳細を展開 ➔</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="c-case-card">
+                        <div class="c-case-card__image">
+                            <!-- 画像プレースホルダ -->
+                        </div>
+                        <div class="c-case-card__body">
+                            <div class="c-case-card__label">マスターバッチ使用例</div>
+                            <h3 class="c-case-card__title">商品名B</h3>
+                            <p class="c-case-card__desc">商品Bの簡単な説明が入ります。用途や特徴を短くまとめてください。</p>
+                            <div class="c-case-card__actions">
+                                <a class="c-case-card__link" href="#">詳細を展開 ➔</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="c-case-card">
+                        <div class="c-case-card__image">
+                            <!-- 画像プレースホルダ -->
+                        </div>
+                        <div class="c-case-card__body">
+                            <div class="c-case-card__label">マスターバッチ使用例</div>
+                            <h3 class="c-case-card__title">商品名C</h3>
+                            <p class="c-case-card__desc">商品Cの簡単な説明が入ります。用途や特徴を短くまとめてください。</p>
+                            <div class="c-case-card__actions">
+                                <a class="c-case-card__link" href="#">詳細を展開 ➔</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="l-section l-container">
+            <div class="c-scroller">
+                <h2 class="c-scroller__title">主な商品</h2>
+                <div class="c-scroller__track-wrap">
+                    <button class="c-btn c-btn--outline c-scroller__nav-btn" id="prev">&lt;</button>
+                    <div class="c-scroller__track" id="track">
+                        <a href="products/detail.html" class="c-scroller__card">
+                            <div class="c-scroller__img"><img src="" alt="ごはん"></div>
+                            <p>ごはん</p>
+                        </a>
+                        <a href="products/detail.html" class="c-scroller__card">
+                            <div class="c-scroller__img"><img src="" alt="じゃがいも"></div>
+                            <p>じゃがいも</p>
+                        </a>
+                        <a href="products/detail.html" class="c-scroller__card">
+                            <div class="c-scroller__img"><img src="" alt="にく"></div>
+                            <p>にく</p>
+                        </a>
+                        <a href="products/detail.html" class="c-scroller__card">
+                            <div class="c-scroller__img"><img src="" alt="にんじん"></div>
+                            <p>にんじん</p>
+                        </a>
+                        <a href="products/detail.html" class="c-scroller__card">
+                            <div class="c-scroller__img"><img src="" alt="ピーマン"></div>
+                            <p>ピーマン</p>
+                        </a>
+                    </div>
+                    <button class="c-btn c-btn--outline c-scroller__nav-btn" id="next">&gt;</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <section class="c-cta">
+        <h2 class="c-cta__title">ご不明な点はお気軽にご相談ください</h2>
+        <p class="c-cta__text">用途に合わせた最適な素材と加工をご提案いたします。</p>
+        <a href="contact/index.html" class="c-btn c-btn--outline">✉️ お問い合わせ・カタログ請求</a>
+    </section>
+
+    <footer class="c-footer">
+        <div class="c-footer__inner">
+            <div class="c-footer__info">
+                <div class="c-footer__logo-text">Sankemi</div>
+                <p class="c-footer__address">〒270-2216<br>千葉県松戸市串崎新田37-81<br>TEL: 047-385-2100</p>
+            </div>
+            <div class="c-footer__links">
+                <ul class="c-footer__nav-list">
+                    <li class="c-footer__nav-item"><a href="index.html">トップページ</a></li>
+                    <li class="c-footer__nav-item"><a href="products/index.html">販売品目</a></li>
+                    <li class="c-footer__nav-item"><a href="products/index.html">加工事例</a></li>
+                </ul>
+                <ul class="c-footer__nav-list">
+                    <li class="c-footer__nav-item"><a href="about/index.html">会社概要</a></li>
+                    <li class="c-footer__nav-item"><a href="locations/index.html">拠点情報</a></li>
+                    <li class="c-footer__nav-item"><a href="news/index.html">お知らせ</a></li>
+                    <li class="c-footer__nav-item"><a href="contact/index.html">お問い合わせ</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="c-footer__copyright">&copy; Sankemi Co., Ltd. All Rights Reserved.</div>
+    </footer>
+    <button class="c-back-to-top" id="js-back-to-top" aria-label="トップに戻る">↑</button>
+
+    <!-- ニュースポップアップモーダル -->
+    <div class="c-modal" id="js-news-modal" aria-hidden="true">
+        <div class="c-modal__backdrop" id="js-modal-backdrop"></div>
+        <div class="c-modal__content">
+            <button class="c-modal__close" id="js-modal-close" aria-label="閉じる">&times;</button>
+            <div class="c-modal__body">
+                <iframe src="newstest.html"></iframe>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="js/main.js" defer></script>
+</body>
+
+</html>
