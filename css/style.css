@@ -1256,6 +1256,15 @@ body.is-modal-open {
   padding: var(--space-lg);
   border-radius: 8px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+/* アニメーションの制御 */
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* 製造販売品目カードと同じようにアニメーションを追加しました */
+.p-products__other-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+  border-color: var(--color-primary);
 }
 
 .p-products__other-icon {
