@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>販売品目 | Sankemi</title>
+    <!-- パスの変更により修正済み -->
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+
+<body>
+    <header class="c-header">
+        <div class="c-header__inner">
+            <!-- パスの変更により修正済み -->
+            <a href="../../index.html" class="c-header__logo-wrapper">
+                <img src="../../assets/images/logo.png" alt="logo">
+            </a>
+            <nav class="c-nav" id="js-nav">
+                <ul class="c-nav__list">
+                    <!-- パスの変更により修正済み -->
+                    <li class="c-nav__item"><a href="../../index.html">トップ</a></li>
+                    <li class="c-nav__item"><a href="../index.html" class="is-active">販売品目</a></li>
+                    <li class="c-nav__item"><a href="../../about/index.html">会社概要</a></li>
+                    <li class="c-nav__item"><a href="../../locations/index.html">拠点情報</a></li>
+                    <li class="c-nav__item"><a href="../../news/index.html">お知らせ</a></li>
+                    <li class="c-nav__item"><a href="../../contact/index.html">お問い合わせ</a></li>
+                </ul>
+            </nav>
+            <button class="c-hamburger" id="js-hamburger" aria-label="メニュー開閉">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <div class="c-page-title-banner">
+        <div class="l-container">
+            <!-- ページの呼称を"その他販売品目"に変更しました -->
+            <h1 class="c-page-title">その他販売品目</h1>
+            <div class="c-breadcrumb c-breadcrumb--center">
+                <!-- パスの変更により修正済み -->
+                <a href="../../index.html">トップ</a>
+                <a href="../index.html">販売品目</a>
+                <span class="c-breadcrumb__item">その他販売品目</span>
+            </div>
+        </div>
+    </div>
+
+    <main>
+        <section class="l-section">
+            <div class="l-container l-container--narrow">
+                <div class="p-other-detail">
+                    <h2 class="c-section-title c-section-title--center">副資材</h2>
+                    <p class="p-other-detail__text">
+                        <!-- 順番を本家ページと変更しました -->
+                        添加剤（シリコン離型剤、金型防錆剤、金型清浄剤、 静電防止剤、潤滑剤、シリンダー洗浄剤、ブレンドオイル）<br>
+                        その他（発泡剤、紫外線吸収剤、帯電防止剤、スリップ剤）</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <section class="c-cta">
+        <h2 class="c-cta__title">ご不明な点はお気軽にご相談ください</h2>
+        <p class="c-cta__text">用途に合わせた最適な素材と加工をご提案いたします。</p>
+        <!-- パスの変更により修正済み -->
+        <a href="../../contact/index.html" class="c-btn c-btn--outline">✉️ お問い合わせ・カタログ請求</a>
+    </section>
+
+    <footer class="c-footer">
+        <!-- パスの変更により修正済み -->
+        <div class="c-footer__inner">
+            <div class="c-footer__info">
+                <div class="c-footer__logo-text">Sankemi</div>
+                <p class="c-footer__address">〒270-2216<br>千葉県松戸市串崎新田37-81<br>TEL: 047-385-2100</p>
+            </div>
+            <div class="c-footer__links">
+                <ul class="c-footer__nav-list">
+                    <li class="c-footer__nav-item"><a href="../../index.html">トップページ</a></li>
+                    <li class="c-footer__nav-item"><a href="../index.html">販売品目</a></li>
+                    <li class="c-footer__nav-item"><a href="../../index.html">加工事例</a></li>
+                </ul>
+                <ul class="c-footer__nav-list">
+                    <li class="c-footer__nav-item"><a href="../../about/index.html">会社概要</a></li>
+                    <li class="c-footer__nav-item"><a href="../../locations/index.html">拠点情報</a></li>
+                    <li class="c-footer__nav-item"><a href="../../news/index.html">お知らせ</a></li>
+                    <li class="c-footer__nav-item"><a href="../../contact/index.html">お問い合わせ</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="c-footer__copyright">&copy; Sankemi Co., Ltd. All Rights Reserved.</div>
+    </footer>
+    <button class="c-back-to-top" id="js-back-to-top" aria-label="トップに戻る">↑</button>
+    <script src="../js/main.js" defer></script>
+    <script>
+        // Search Functionality
+        const searchInput = document.querySelector('.p-products__search-input');
+        const productCards = document.querySelectorAll('.p-products__card');
+
+        // ひらがなをカタカナに変換する処理（検索揺れ吸収用）
+        const toKatakana = (str) => {
+            return str.replace(/[\u3041-\u3096]/g, match => String.fromCharCode(match.charCodeAt(0) + 0x60));
+        };
+
+        searchInput.addEventListener('input', (e) => {
+            const query = toKatakana(e.target.value.normalize('NFKC')).toLowerCase();
+
+            productCards.forEach(card => {
+                const title = toKatakana(card.querySelector('.p-products__card-title').textContent.normalize('NFKC')).toLowerCase();
+                const desc = toKatakana(card.querySelector('.p-products__card-desc').textContent.normalize('NFKC')).toLowerCase();
+
+                if (title.includes(query) || desc.includes(query)) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
