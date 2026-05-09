@@ -1458,7 +1458,27 @@ body.is-modal-open {
 }
 
 /* =========================================
-   13. Utility / Shared Class Extensions
+   13. Other Detail Page (p-other-detail)
+   ========================================= */
+
+.p-other-detail {
+  padding: 50px 0;
+}
+
+.p-other-detail__text {
+  padding-top: 60px;
+  font-size: 140%;
+}
+
+.p-other-product-catalog__actions {
+  justify-content: center;
+  width: 100%;
+  padding-top: 10px;
+  padding-bottom: 30px;
+}
+
+/* =========================================
+   14. Utility / Shared Class Extensions
    ========================================= */
 
 /* Breadcrumb - center variant */
@@ -1598,7 +1618,7 @@ body.is-modal-open {
 }
 
 /* =========================================
-   14. Product Detail Extensions
+   15. Product Detail Extensions
    ========================================= */
 
 .p-product-detail__main-img {
@@ -1620,7 +1640,7 @@ body.is-modal-open {
 }
 
 /* =========================================
-   15. Case Study (Processing Examples)
+   16. Case Study (Processing Examples)
    ========================================= */
 .p-top__case {
   text-align: center;
@@ -1702,7 +1722,7 @@ body.is-modal-open {
 }
 
 /* =========================================
-   15. Case Study (Processing Examples)
+   17. Case Study (Processing Examples)
    ========================================= */
 .p-top__case {
   text-align: center;
@@ -1803,7 +1823,7 @@ body.is-modal-open {
 }
 
 /* =========================================
-16. Product Catalog Section
+18. Product Catalog Section
 ========================================= */
 .p-product-catalog {
   text-align: center;
