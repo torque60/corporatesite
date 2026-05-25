@@ -1,0 +1,56 @@
+# --------------------------------------------------
+# 1. 404エラーページの指定
+# --------------------------------------------------
+ErrorDocument 404 /assets/error404.html
+
+# --------------------------------------------------
+# 2. 拡張子設定
+# --------------------------------------------------
+
+RewriteEngine On
+
+# error404.htmlの パスを隠す
+RewriteRule ^error404$ assets/error404.html [L]
+
+# 反復のアドレス防止
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteCond %{REQUEST_FILENAME}/%{NOTATION}\.html -f [OR]
+RewriteCond %{DOCUMENT_ROOT}/$1/$1.html -f
+RewriteRule ^([^/]+)/?$ $1/$1.html [NC,L]
+
+# 拡張子なし → .html を隠す
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.html -f
+RewriteRule ^(.*)$ $1.html [NC,L]
+
+# 拡張子なし → .png を探す
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME}.png -f
+RewriteRule ^(.+)$ $1.png [L]
+
+# 拡張子なし → .jpg を探す
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME}.jpg -f
+RewriteRule ^(.+)$ $1.jpg [L]
+
+# --------------------------------------------------
+# 4. セキュリティ
+# --------------------------------------------------
+
+# ディレクトリリスティング防止
+Options -Indexes
+
+# サーバー情報、OSバージョン漏洩防止
+ServerSignature Off
+
+# 外部サイトでのiframe内表示を禁止
+Header set X-Frame-Options "SAMEORIGIN"
+
+# wwwなし（https）に強制転送・セッションハイジャック防止
+RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
+
+# .htaccessへのアクセス禁止
+<Files ".htaccess">
+    Require all denied
+</Files>
