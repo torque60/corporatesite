@@ -1408,6 +1408,46 @@ body.is-modal-open {
   font-size: 1.5rem;
 }
 
+/* 補足テキスト（各ステップ内の短い説明） */
+.p-products__flow-desc {
+  color: var(--muted, #374151);
+  font-size: 0.98rem;
+  font-weight: 500;
+  line-height: 1.65;          /* 行間を広めに */
+  letter-spacing: -0.01em;   /* 日本語の微調整 */
+  max-width: 60ch;
+  margin: 0;
+   word-break: keep-all;   /* 日本語の不自然な改行を抑える */
+}
+
+/* 行間の微調整（必要なら） */
+.p-products__flow-desc br {
+  content: "";
+  line-height: 1.0; /* br の高さを調整したい場合に使う（通常は不要） */
+}
+
+/* 強調したい語句用 */
+.p-products__flow-desc strong {
+  color: var(--color-primary, #0a66c2);
+  font-weight: 700;
+}
+
+
+
+
+
+/* 小画面での調整 */
+@media (max-width: 600px) {
+  .p-products__flow-desc {
+    font-size: 0.92rem;
+    max-width: 100%;
+  }
+  .p-products__flow-item {
+    gap: 0.75rem;
+    padding: calc(var(--space-sm, 12px)) calc(var(--space-md, 16px));
+  }
+}
+
 /* =========================================
    11. Product Detail Page (p-product-detail)
    ========================================= */
