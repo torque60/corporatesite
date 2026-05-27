@@ -1012,6 +1012,75 @@ body.is-modal-open {
 /* =========================================
    7. Locations Page (p-locations)
    ========================================= */
+
+.location-bottom {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 20px;
+  row-gap: var(--space-lg);
+  max-width: 1100px;
+  margin: 0 auto;
+  padding-bottom: 60px;
+}
+
+.location-bottom .l-section {
+  padding: 0;
+}
+
+.location-bottom > .l-section {
+  width: 100%;
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  padding: calc(var(--space-lg) + 8px) var(--space-xl);
+  min-height: 220px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.location-bottom > .l-container {
+  max-width: none;
+  padding: 0;
+}
+
+.location-bottom .p-locations__card {
+  height: auto;
+  margin-bottom: 0;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  padding: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.location-bottom .p-locations__info {
+  width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+  padding-top: 20px;
+  padding-left: 30px;
+  padding-right: 0;
+  justify-content: flex-start;
+  align-items: stretch;
+}
+
+.location-bottom .p-locations__address p {
+  text-align: left;
+}
+
+@media (max-width: 1200px) {
+  .location-bottom {
+    grid-template-columns: 1fr;
+  }
+  .location-bottom > .l-section:nth-child(1),
+  .location-bottom > .l-section:nth-child(2) {
+    grid-column: auto;
+  }
+}
 .p-locations__card {
   background: #fff;
   border: 1px solid var(--color-border);
@@ -1020,10 +1089,15 @@ body.is-modal-open {
   margin-bottom: var(--space-xl);
 }
 
+.l-section.l-container > .p-locations__card {
+  margin-bottom: 0;
+}
+
 .p-locations__map {
   width: 100%;
-  height: 400px;
+  height: 500px;
   margin-bottom: var(--space-lg);
+  margin-top: var(--space-lg);
 }
 
 .p-locations__info {
@@ -1256,6 +1330,15 @@ body.is-modal-open {
   padding: var(--space-lg);
   border-radius: 8px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+/* アニメーションの制御 */
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* 製造販売品目カードと同じようにアニメーションを追加しました */
+.p-products__other-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+  border-color: var(--color-primary);
 }
 
 .p-products__other-icon {
@@ -1323,6 +1406,46 @@ body.is-modal-open {
   align-items: center;
   justify-content: center;
   font-size: 1.5rem;
+}
+
+/* 補足テキスト（各ステップ内の短い説明） */
+.p-products__flow-desc {
+  color: var(--muted, #374151);
+  font-size: 0.98rem;
+  font-weight: 500;
+  line-height: 1.65;          /* 行間を広めに */
+  letter-spacing: -0.01em;   /* 日本語の微調整 */
+  max-width: 60ch;
+  margin: 0;
+   word-break: keep-all;   /* 日本語の不自然な改行を抑える */
+}
+
+/* 行間の微調整（必要なら） */
+.p-products__flow-desc br {
+  content: "";
+  line-height: 1.0; /* br の高さを調整したい場合に使う（通常は不要） */
+}
+
+/* 強調したい語句用 */
+.p-products__flow-desc strong {
+  color: var(--color-primary, #0a66c2);
+  font-weight: 700;
+}
+
+
+
+
+
+/* 小画面での調整 */
+@media (max-width: 600px) {
+  .p-products__flow-desc {
+    font-size: 0.92rem;
+    max-width: 100%;
+  }
+  .p-products__flow-item {
+    gap: 0.75rem;
+    padding: calc(var(--space-sm, 12px)) calc(var(--space-md, 16px));
+  }
 }
 
 /* =========================================
@@ -1449,7 +1572,27 @@ body.is-modal-open {
 }
 
 /* =========================================
-   13. Utility / Shared Class Extensions
+   13. Other Detail Page (p-other-detail)
+   ========================================= */
+
+.p-other-detail {
+  padding: 50px 0;
+}
+
+.p-other-detail__text {
+  padding-top: 60px;
+  font-size: 140%;
+}
+
+.p-other-product-catalog__actions {
+  justify-content: center;
+  width: 100%;
+  padding-top: 10px;
+  padding-bottom: 30px;
+}
+
+/* =========================================
+   14. Utility / Shared Class Extensions
    ========================================= */
 
 /* Breadcrumb - center variant */
@@ -1589,7 +1732,7 @@ body.is-modal-open {
 }
 
 /* =========================================
-   14. Product Detail Extensions
+   15. Product Detail Extensions
    ========================================= */
 
 .p-product-detail__main-img {
@@ -1658,12 +1801,14 @@ body.is-modal-open {
   /* シャドウを抑えて周囲と調和させる */
   transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
   cursor: pointer;
+  aspect-ratio: 4 / 5.2;
 }
 
 .p-product-catalog__img {
   width: 100%;
-  aspect-ratio: 4 / 5.2;
-  object-fit: cover;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
   transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
