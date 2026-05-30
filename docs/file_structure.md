@@ -16,6 +16,7 @@ corporatesite/
 ├── css/                # スタイルシート格納
 ├── js/                 # JavaScriptファイル格納
 ├── locations/          # 拠点・アクセス情報セクション
+├── news/               # お知らせセクション
 ├── products/           # 販売品目セクション
 │   ├── detail/         # 製品個別詳細
 │   │   ├── catalog/    # 製品カタログ

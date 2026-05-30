@@ -19,6 +19,7 @@ corporatesite/
 ├── css/                # スタイルシート格納 (BEM準拠)
 ├── js/                 # JavaScriptファイル格納
 ├── locations/          # 拠点・アクセス情報セクション
+├── news/               # お知らせセクション
 ├── products/           # 販売品目セクション
 │   ├── detail/         # 製品個別詳細
 │   ├── other-detail/   # その他販売品目
