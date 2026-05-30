@@ -1376,7 +1376,7 @@ body.is-modal-open {
   margin-left: auto;
   margin-right: auto;
   border-left: 2px solid var(--color-primary);
-  padding-left: 56px;
+  padding-left: 70px;
 }
 
 .p-products__flow-item {
@@ -1389,6 +1389,9 @@ body.is-modal-open {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+.p-products__flow-item p {
+  margin-right: 30px;
 }
 
 .p-products__flow-item::before {
@@ -1430,11 +1433,14 @@ body.is-modal-open {
   color: var(--muted, #374151);
   font-size: 0.98rem;
   font-weight: 500;
-  line-height: 1.65;          /* 行間を広めに */
-  letter-spacing: -0.01em;   /* 日本語の微調整 */
+  line-height: 1.65;
+  letter-spacing: -0.01em;
   max-width: 60ch;
-  margin: 0;
-   word-break: keep-all;   /* 日本語の不自然な改行を抑える */
+  
+  /* 修正・追加ポイント */
+  margin-left: auto;      /* 親がFlexboxの場合、これで要素ごと右側に押し寄せます */
+  text-align: right;      /* テキスト内の文字を右揃えにします */
+  word-break: keep-all;
 }
 
 /* 行間の微調整（必要なら） */
