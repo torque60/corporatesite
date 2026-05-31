@@ -1989,7 +1989,7 @@ body.is-modal-open {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: var(--space-md);
+  gap: 40px;
   width: 100%;
 }
 
