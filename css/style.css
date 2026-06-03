@@ -1976,6 +1976,7 @@ body.is-modal-open {
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: var(--space-xl) var(--space-lg);
   justify-content: center;
+  padding-top: 20px;
 }
 
 /* カタログが少ない場合でも中央に寄るように調整 */
@@ -1989,7 +1990,7 @@ body.is-modal-open {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: var(--space-md);
+  gap: 40px;
   width: 100%;
 }
 
