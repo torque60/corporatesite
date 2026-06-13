@@ -753,16 +753,19 @@ body.is-modal-open {
 }
 
 .c-scroller__img {
-  aspect-ratio: 4/3;
+  margin-left: auto;
+  margin-right: auto;
   margin-bottom: 8px;
   border-radius: 4px;
-  overflow: hidden;
-  background: #fff;
-  display: block;            /* inline-gap を消す */
+  background: #fff;              
+  width: 145px;
+  height: 145px;
+}
+
+.c-scroller__img img {
+  object-fit: fill;
   width: 100%;
-  object-fit: contain;       /* 画像全体を見せる（余白が出る） */
-  object-position: center;
-  border-radius: 0;
+  height: 100%;
 }
 
 /* Footer CTA */
