@@ -1321,8 +1321,13 @@ body.is-modal-open {
   aspect-ratio: 16/9;
   background-color: var(--color-bg-main);
   display: flex;
-  align-items: center;
+  /* align-items: center; */
   justify-content: center;
+}
+
+.p-products__card-img img {
+  object-fit: contain;
+  
 }
 
 .p-products__card-body {
