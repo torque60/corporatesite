@@ -1533,6 +1533,11 @@ body.is-modal-open {
 }
 
 .p-product-detail__specs li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
   padding: 12px 0;
   border-bottom: 1px solid var(--color-border);
   font-weight: bold;
