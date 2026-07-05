@@ -413,7 +413,7 @@ img[src=""]::after {
 }
 
 .c-hero__title {
-  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-size: clamp(2rem, 5vw, 2.8rem);
   font-weight: 900;
   margin-bottom: var(--space-md);
   text-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
@@ -1533,6 +1533,11 @@ body.is-modal-open {
 }
 
 .p-product-detail__specs li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
   padding: 12px 0;
   border-bottom: 1px solid var(--color-border);
   font-weight: bold;
