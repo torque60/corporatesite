@@ -753,16 +753,19 @@ body.is-modal-open {
 }
 
 .c-scroller__img {
-  aspect-ratio: 4/3;
+  margin-left: auto;   /* 追加 */
+  margin-right: auto;  /* 追加 */
   margin-bottom: 8px;
   border-radius: 4px;
-  overflow: hidden;
+  height: 145px;
   background: #fff;
-  display: block;            /* inline-gap を消す */
+  width: 145px;
+}
+
+.c-scroller__img img {
+  object-fit: fill;
   width: 100%;
-  object-fit: contain;       /* 画像全体を見せる（余白が出る） */
-  object-position: center;
-  border-radius: 0;
+  height: 100%;
 }
 
 /* Footer CTA */
@@ -1525,6 +1528,11 @@ body.is-modal-open {
 }
 
 .p-product-detail__specs li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
   padding: 12px 0;
   border-bottom: 1px solid var(--color-border);
   font-weight: bold;
