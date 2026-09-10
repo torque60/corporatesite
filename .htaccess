@@ -1,0 +1,7 @@
+# .htaccessの先頭に以下を追加
+
+RewriteEngine On
+
+# HTTPでアクセスされた場合、HTTPSにリダイレクトする
+RewriteCond %{HTTPS} off
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
