@@ -3,6 +3,7 @@ name: Deploy static content to Pages
 
 on:
   # Runs on pushes targeting the default branch
+  # この下にデプロイ死体ブランチ名を入力
   push:
     branches: ["variant/subtract-with-case-studies"]
 
